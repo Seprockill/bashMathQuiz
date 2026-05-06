@@ -41,7 +41,11 @@ while true; do
             echo ""
             ;;
         4)
-            echo "Módulo de división"
+            if [ -x "$DIR/division.sh" ]; then
+                "$DIR/division.sh"
+            else
+                bash "$DIR/division.sh"
+            fi
             echo ""
             ;;
         9)

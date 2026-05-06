@@ -1,16 +1,15 @@
 #!/bin/bash
 
-
-A=$(( (RANDOM % 100) + 1 ))
-
 B=$(( (RANDOM % 10) + 1 ))
 
-respuesta_correcta=$((A * B))
+respuesta_correcta=$(( (RANDOM % 100) + 1 ))
+
+A=$((respuesta_correcta * B))
 
 intentos=3
 
 while [ $intentos -gt 0 ]; do
-    echo "¿Cuánto es $A * $B?"
+    echo "¿Cuánto es $A / $B?"
     read -p "Tu respuesta: " respuesta
     
     if [[ "$respuesta" =~ ^[0-9]+$ ]] && [ "$respuesta" -eq "$respuesta_correcta" ]; then
