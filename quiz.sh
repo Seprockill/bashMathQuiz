@@ -25,7 +25,11 @@ while true; do
             echo ""
             ;;
         2)
-            echo "Módulo de resta"
+            if [ -x "$DIR/resta.sh" ]; then
+                "$DIR/resta.sh"
+            else
+                bash "$DIR/resta.sh"
+            fi
             echo ""
             ;;
         3)
