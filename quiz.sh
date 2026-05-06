@@ -33,7 +33,11 @@ while true; do
             echo ""
             ;;
         3)
-            echo "Módulo de multiplicación"
+            if [ -x "$DIR/multiplicacion.sh" ]; then
+                "$DIR/multiplicacion.sh"
+            else
+                bash "$DIR/multiplicacion.sh"
+            fi
             echo ""
             ;;
         4)
